@@ -21,4 +21,10 @@ class FeatureTests: XCTestCase {
     func testExample() throws {
         moduleBundle //crash
     }
+    
+    func testExample2() throws {
+        // crash
+        let url = ownBundle.resourceURL!.appendingPathComponent("SPM_SPM.bundle").appendingPathComponent("resource.txt")
+        XCTAssertEqual(try String(contentsOf: url), "**Loaded!!**\n")
+    }
 }
